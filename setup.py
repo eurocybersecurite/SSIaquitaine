@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='SSIaquitaine',
-    version='0.1.0',
+    version='0.1.1',
     author='Mohamed Redha Abdessemed',
     author_email='mohamed.abdessemed@eurocybersecurite.fr',
     description='Un outil de gestion de projet pour un SSI (Système de Sécurité Informatique).',

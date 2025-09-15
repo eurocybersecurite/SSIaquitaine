@@ -8,6 +8,14 @@ Un outil de gestion de projet pour un SSI (Système de Sécurité Informatique).
 - **Planning**: Gestion simple des tâches (ajouter, lister, supprimer).
 - **Audit**: Module pour ajouter et suivre des audits de sécurité.
 - **Reporting**: Génération d'un rapport texte de l'état des projets SSI.
+- **Gestion des tâches**: Un module complet pour gérer les tâches avec des statuts, des priorités et des descriptions.
+
+## Améliorations de la version 0.1.1
+
+- **Nouveau module de gestion des tâches**: `ssiaquitaine.tasks` avec `TaskManager` pour une gestion avancée.
+- **Affichage coloré**: Utilisation de `colorama` pour améliorer la lisibilité des statuts de tâches.
+- **Export de rapports**: Fonctionnalité pour exporter des rapports de tâches au format texte.
+- **Configuration centralisée**: Passage à `pyproject.toml` pour une gestion moderne du packaging.
 
 ## Architecture
 
@@ -16,7 +24,8 @@ SSIaquitaine
 ├── Core       → Fonctions de base (welcome)
 ├── Planning   → Gestion des tâches SSI
 ├── Audit      → Suivi des audits de sécurité
-└── Reporting  → Génération de rapports
+├── Reporting  → Génération de rapports
+└── Tasks      → Gestion avancée des tâches
 ```
 
 ## Exemple d'utilisation
@@ -24,8 +33,14 @@ SSIaquitaine
 ### Utilisation en Python
 
 ```python
-from ssiaquitaine.core import welcome
-print(welcome("Mohamed"))
+from ssiaquitaine.tasks import TaskManager
+
+tm = TaskManager()
+tm.add_task("Analyser logs firewall", "Audit sécurité hebdomadaire", "high")
+tm.add_task("Former équipe", "Session de sensibilisation SSI", "medium")
+tm.update_status(1, "in-progress")
+tm.list_tasks()
+tm.export_report()
 ```
 
 ### Utilisation en ligne de commande (CLI)
