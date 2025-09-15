@@ -13,6 +13,8 @@ ssiaquitaine/audit.py
 ssiaquitaine/core.py
 ssiaquitaine/planning.py
 ssiaquitaine/reporting.py
+ssiaquitaine/tasks.py
 tests/test_audit.py
 tests/test_planning.py
 tests/test_reporting.py
+tests/test_tasks.py
